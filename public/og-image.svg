@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.15" r="0.7">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.22" />
+      <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#F8FAFC" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+
+  <g transform="translate(96 150)">
+    <rect width="96" height="96" rx="26" fill="url(#mark)" />
+    <path d="M27 70V32.4c0-1.2 1.4-1.9 2.4-1.2L62 53.7V30" fill="none" stroke="#fff" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <text x="96" y="330" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="82" font-weight="800" fill="#0F172A">Al-Nawawy</text>
+  <text x="96" y="392" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="34" font-weight="600" fill="#3B82F6">AI · Automation · Web · Marketing</text>
+  <text x="96" y="466" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="27" fill="#334155">AI agents, business automation, professional websites</text>
+  <text x="96" y="506" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="27" fill="#334155">and complete marketing solutions.</text>
+
+  <rect x="96" y="548" width="220" height="6" rx="3" fill="url(#mark)" />
+</svg>
