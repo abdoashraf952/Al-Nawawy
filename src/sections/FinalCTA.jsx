@@ -9,7 +9,7 @@ export function FinalCTA() {
   const { t } = useI18n();
 
   return (
-    <section id="contact" aria-labelledby="cta-title" className="scroll-mt-28 pb-16 sm:pb-20 lg:pb-24">
+    <section id="contact" aria-labelledby="cta-title" className="pb-16 sm:pb-20 lg:pb-24">
       <Container>
         <Reveal className="relative overflow-hidden rounded-[2rem] bg-ink px-7 py-14 text-center sm:px-12 sm:py-20">
           <div

@@ -7,6 +7,10 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   base: '/Al-Nawawy/',
   plugins: [react(), tailwindcss()],
+  // Lets the dev server answer through an ngrok tunnel (Vite rejects unknown Host headers).
+  server: {
+    allowedHosts: ['.ngrok-free.dev'],
+  },
   build: {
     target: 'es2020',
     rollupOptions: {

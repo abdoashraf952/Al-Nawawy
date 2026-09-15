@@ -9,4 +9,6 @@ export const navLinks = [
   { id: 'contact', href: '#contact', labelKey: 'nav.contact' },
 ];
 
-export const sectionIds = navLinks.map((link) => link.id);
+// The scroll spy tracks sections without a nav link too, so that while one of them
+// is on screen no link is highlighted instead of the previous one staying lit.
+export const sectionIds = [...navLinks.map((link) => link.id), 'problem', 'why', 'process'];

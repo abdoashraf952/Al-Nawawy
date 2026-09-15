@@ -1,17 +1,19 @@
-// Showcase slots. Each entry renders a labelled placeholder until you fill in `src`.
+// Showcase items. An entry with an empty `src` renders a labelled placeholder slot.
 //
 // To add a real asset:
 //   1. Drop the file into  public/assets/videos/  or  public/assets/images/
-//   2. Set `src` to the same path used in `path` below (and `poster` for videos).
+//   2. Set `src` to its path (and `poster` for videos — a still frame works well).
+// Videos are hosted on Cloudinary to keep the repo small: set `src` to the full
+// delivery URL with `q_auto/` after `upload/` so Cloudinary compresses it.
 // Nothing else needs to change.
 
 export const mediaItems = [
   {
     id: 'ad-01',
     type: 'video',
-    src: '', // e.g. 'assets/videos/ad-01.mp4'
-    poster: '', // e.g. 'assets/images/ad-01-poster.jpg'
-    path: 'assets/videos/ad-01.mp4',
+    src: 'https://res.cloudinary.com/i75rqecg/video/upload/q_auto/v1789430728/01_hook_AL.mp4',
+    poster: 'assets/images/01_hook_AL-poster.jpg',
+    path: 'assets/videos/01_hook_AL.mp4',
     aspect: '16/9',
     span: 'wide',
     title: { en: 'AI Advertising Video', ar: 'فيديو إعلاني بالذكاء الاصطناعي' },
@@ -19,50 +21,24 @@ export const mediaItems = [
   {
     id: 'reel-01',
     type: 'video',
-    src: '',
-    poster: '',
-    path: 'assets/videos/reel-01.mp4',
+    src: 'https://res.cloudinary.com/i75rqecg/video/upload/q_auto/v1789430613/1.mp4',
+    poster: 'assets/images/1-poster.jpg',
+    path: 'assets/videos/1.mp4',
     aspect: '9/16',
     span: 'normal',
-    title: { en: 'Short-form Promo', ar: 'إعلان قصير للسوشيال' },
+    title: { en: 'Short-form Product Promo', ar: 'إعلان منتج قصير للسوشيال' },
   },
   {
     id: 'product-01',
     type: 'image',
-    src: '', // e.g. 'assets/images/product-01.jpg'
-    path: 'assets/images/product-01.jpg',
+    src: 'assets/images/hf_20260914_233514_509f64b6-bf66-4e99-9ef6-a05518dbfc58.png',
+    path: 'assets/images/hf_20260914_233514_509f64b6-bf66-4e99-9ef6-a05518dbfc58.png',
     aspect: '1/1',
     span: 'normal',
     title: { en: 'AI Product Image', ar: 'صورة منتج بالذكاء الاصطناعي' },
   },
-  {
-    id: 'social-01',
-    type: 'image',
-    src: '',
-    path: 'assets/images/social-01.jpg',
-    aspect: '1/1',
-    span: 'normal',
-    title: { en: 'Social Media Creative', ar: 'تصميم سوشيال ميديا' },
-  },
-  {
-    id: 'campaign-01',
-    type: 'image',
-    src: '',
-    path: 'assets/images/campaign-01.jpg',
-    aspect: '4/3',
-    span: 'normal',
-    title: { en: 'Campaign Concept', ar: 'فكرة حملة إعلانية' },
-  },
-  {
-    id: 'ad-02',
-    type: 'video',
-    src: '',
-    poster: '',
-    path: 'assets/videos/ad-02.mp4',
-    aspect: '16/9',
-    span: 'wide',
-    title: { en: 'Promotional Video', ar: 'فيديو ترويجي' },
-  },
 ];
 
-export const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`;
+// Local paths get the GitHub Pages base prefix; full URLs (e.g. Cloudinary) pass through untouched.
+export const assetUrl = (path) =>
+  /^https?:\/\//.test(path) ? path : `${import.meta.env.BASE_URL}${path}`;

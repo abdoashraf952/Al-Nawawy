@@ -12,6 +12,9 @@ const spanClass = {
   normal: '',
 };
 
+// The "drop your file here" hint only makes sense while placeholder slots remain.
+const hasEmptySlots = mediaItems.some((item) => !item.src);
+
 export function MediaShowcase() {
   const { t } = useI18n();
   const [openItem, setOpenItem] = useState(null);
@@ -26,7 +29,9 @@ export function MediaShowcase() {
         align="center"
       />
 
-      <Reveal className="mt-6 text-center text-xs text-muted">{t('work.slotHint')}</Reveal>
+      {hasEmptySlots && (
+        <Reveal className="mt-6 text-center text-xs text-muted">{t('work.slotHint')}</Reveal>
+      )}
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {mediaItems.map((item, i) => (

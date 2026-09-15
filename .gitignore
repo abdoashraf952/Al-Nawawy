@@ -8,3 +8,6 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 *.log
+
+# Videos are served from Cloudinary (see src/data/media.js); keep local copies out of git
+public/assets/videos/*.mp4
