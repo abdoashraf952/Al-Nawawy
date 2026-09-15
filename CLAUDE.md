@@ -128,8 +128,8 @@ stay in `public/assets/images/`.
 
 `.github/workflows/deploy.yml` builds and deploys to GitHub Pages on push to `main`. The
 workflow passes `actions/configure-pages`' `base_path` output to the build as `BASE_PATH`,
-so `base` in `vite.config.js` always matches the real repo name (the GitHub repo is
-`AI-Nawawy`, capital I) and becomes `/` if a custom domain is added. Locally `base` falls
+so `base` in `vite.config.js` always matches the real repo name (even if the repo is
+renamed) and becomes `/` if a custom domain is added. Locally `base` falls
 back to `/Al-Nawawy/`. Pages source must be set to "GitHub Actions" in repo settings. `siteConfig.url` is
 intentionally empty until the first deploy — the JSON-LD in `src/seo/structuredData.js`
 omits unset fields rather than inventing them.
