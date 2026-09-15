@@ -16,7 +16,7 @@ export function MediaCard({ item, onOpen }) {
       type="button"
       onClick={() => onOpen(item)}
       aria-label={`${label} — ${isVideo ? t('work.playLabel') : t('work.lightboxLabel')}`}
-      className="group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl border border-line bg-surface shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift"
+      className="group relative block aspect-[4/3] h-full w-full overflow-hidden rounded-2xl border border-line bg-surface shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift"
     >
       {isVideo ? (
         <video

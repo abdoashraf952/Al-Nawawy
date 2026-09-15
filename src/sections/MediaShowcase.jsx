@@ -35,7 +35,7 @@ export function MediaShowcase() {
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {mediaItems.map((item, i) => (
-          <Reveal key={item.id} delay={i * 0.05} className={spanClass[item.span] ?? ''}>
+          <Reveal key={item.id} delay={i * 0.05} className={`h-full ${spanClass[item.span] ?? ''}`}>
             <MediaCard item={item} onOpen={setOpenItem} />
           </Reveal>
         ))}

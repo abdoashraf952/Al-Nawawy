@@ -289,7 +289,7 @@ export const en = {
     eyebrow: 'Showcase',
     title: 'Creative & Media',
     subtitle:
-      'AI advertising videos, product imagery and campaign creatives. This section is reserved for real work — nothing below is a sample.',
+      'Examples of the AI advertising videos, product imagery and campaign creatives we produce.',
     slotHint: 'Drop your file at this path to replace the slot.',
     playLabel: 'Play video',
     lightboxLabel: 'Media preview',
