@@ -17,13 +17,14 @@ const serviceLabelKey = {
   marketing: 'nav.marketing',
 };
 
-export function Solutions() {
+export function Solutions({ primary = false }) {
   const { t } = useI18n();
 
   return (
     <Section id="solutions" labelledBy="solutions-title">
       <SectionHeading
         id="solutions-title"
+        level={primary ? 1 : 2}
         eyebrow={t('solutions.eyebrow')}
         title={t('solutions.title')}
         subtitle={t('solutions.subtitle')}

@@ -1,7 +1,8 @@
 import { useRef } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { NavLink } from 'react-router-dom';
 import { X } from 'lucide-react';
-import { navLinks } from '../../data/nav';
+import { navLinks, contactLink } from '../../data/nav';
 import { useI18n } from '../../i18n/useI18n';
 import { useLockBodyScroll } from '../../hooks/useLockBodyScroll';
 import { useFocusTrap } from '../../hooks/useFocusTrap';
@@ -10,7 +11,7 @@ import { Button } from '../ui/Button';
 import { LangToggle } from './LangToggle';
 import { Logo } from './Logo';
 
-export function MobileMenu({ open, onClose, activeId }) {
+export function MobileMenu({ open, onClose }) {
   const { t } = useI18n();
   const panelRef = useRef(null);
   const reduced = useReducedMotion();
@@ -63,24 +64,41 @@ export function MobileMenu({ open, onClose, activeId }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: reduced ? 0 : 0.05 + i * 0.035, duration: reduced ? 0.01 : 0.3 }}
                   >
-                    <a
-                      href={link.href}
+                    <NavLink
+                      to={link.to}
+                      end={link.end}
                       onClick={onClose}
-                      aria-current={activeId === link.id ? 'true' : undefined}
-                      className={`flex items-center justify-between border-b border-line/70 py-3.5 text-base font-semibold transition ${
-                        activeId === link.id ? 'text-brand' : 'text-ink hover:text-brand'
-                      }`}
+                      className={({ isActive }) =>
+                        `flex items-center justify-between border-b border-line/70 py-3.5 text-base font-semibold transition ${
+                          isActive ? 'text-brand' : 'text-ink hover:text-brand'
+                        }`
+                      }
                     >
-                      {t(link.labelKey)}
-                      <span
-                        aria-hidden="true"
-                        className={`size-1.5 rounded-full transition ${
-                          activeId === link.id ? 'bg-brand' : 'bg-transparent'
-                        }`}
-                      />
-                    </a>
+                      {({ isActive }) => (
+                        <>
+                          {t(link.labelKey)}
+                          <span
+                            aria-hidden="true"
+                            className={`size-1.5 rounded-full transition ${isActive ? 'bg-brand' : 'bg-transparent'}`}
+                          />
+                        </>
+                      )}
+                    </NavLink>
                   </motion.li>
                 ))}
+                <motion.li
+                  initial={{ opacity: 0, y: reduced ? 0 : 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: reduced ? 0 : 0.05 + navLinks.length * 0.035, duration: reduced ? 0.01 : 0.3 }}
+                >
+                  <a
+                    href={contactLink.href}
+                    onClick={onClose}
+                    className="flex items-center justify-between border-b border-line/70 py-3.5 text-base font-semibold text-ink transition hover:text-brand"
+                  >
+                    {t(contactLink.labelKey)}
+                  </a>
+                </motion.li>
               </ul>
             </nav>
 

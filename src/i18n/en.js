@@ -334,6 +334,83 @@ export const en = {
     ],
   },
 
+  // Per-page <title> and meta description. Keys match the route ids in src/data/routes.js.
+  pages: {
+    home: {
+      title: 'Al-Nawawy | AI, Automation, Web & Marketing',
+      description:
+        'Al-Nawawy builds AI agents, business automation systems, professional websites, and complete marketing solutions for businesses.',
+    },
+    services: {
+      title: 'Services | Al-Nawawy',
+      description:
+        'Four independent services: AI agents, business automation, web development and marketing. Buy one or combine them.',
+    },
+    'ai-agents': {
+      title: 'AI Agents for WhatsApp & Messenger | Al-Nawawy',
+      description:
+        'Custom AI agents that answer customers in seconds, take orders, book appointments and record leads on WhatsApp, Messenger and website chat.',
+    },
+    automation: {
+      title: 'Business Automation with n8n | Al-Nawawy',
+      description:
+        'Turn repetitive work into automated workflows: orders, bookings, CRM, follow-ups and reports, built with n8n and similar tools.',
+    },
+    web: {
+      title: 'Website & Web App Development | Al-Nawawy',
+      description:
+        'Company websites, landing pages, e-commerce interfaces and custom web applications built around your business.',
+    },
+    marketing: {
+      title: 'Marketing & Growth | Al-Nawawy',
+      description:
+        'Strategy, content, advertising and optimization, including AI-generated creative production, managed end to end.',
+    },
+    'use-cases': {
+      title: 'Use Cases | Al-Nawawy',
+      description:
+        'Example scenarios showing how AI agents, automation, websites and marketing combine for stores, clinics, restaurants, real estate and service companies.',
+    },
+    work: {
+      title: 'Creative Work | Al-Nawawy',
+      description: 'Examples of AI advertising videos, product imagery and campaign creatives we produce.',
+    },
+    'how-we-work': {
+      title: 'How We Work | Al-Nawawy',
+      description:
+        'Why businesses work with Al-Nawawy and our four-step process from understanding your business to launch and improvement.',
+    },
+    faq: {
+      title: 'FAQ | Al-Nawawy',
+      description:
+        'Answers about pricing, AI agents versus chatbots, n8n automation, websites, timelines and how to get started.',
+    },
+    notFound: {
+      title: 'Page not found | Al-Nawawy',
+      description: 'This page does not exist.',
+    },
+  },
+
+  related: {
+    title: 'Other services',
+    subtitle: 'Each one stands on its own — and they work well together.',
+  },
+
+  explore: {
+    title: 'Keep exploring',
+    items: [
+      { title: 'Use cases', desc: 'See how the services fit stores, clinics, restaurants and more.' },
+      { title: 'Creative work', desc: 'Watch the AI advertising videos and visuals we produce.' },
+      { title: 'How we work', desc: 'The four steps from first conversation to launch.' },
+    ],
+  },
+
+  notFound: {
+    title: 'Page not found',
+    text: 'The page you are looking for does not exist or has moved.',
+    cta: 'Back to home',
+  },
+
   serviceCta: {
     agents: {
       label: 'Discuss an AI agent',

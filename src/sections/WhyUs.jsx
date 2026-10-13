@@ -4,13 +4,14 @@ import { Section } from '../components/ui/Section';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
 
-export function WhyUs() {
+export function WhyUs({ primary = false }) {
   const { t } = useI18n();
 
   return (
     <Section id="why" labelledBy="why-title" className="bg-surface/60">
       <SectionHeading
         id="why-title"
+        level={primary ? 1 : 2}
         eyebrow={t('why.eyebrow')}
         title={t('why.title')}
         subtitle={t('why.subtitle')}

@@ -16,7 +16,7 @@ const spanClass = {
 // The "drop your file here" hint only makes sense while placeholder slots remain.
 const hasEmptySlots = mediaItems.some((item) => !item.src);
 
-export function MediaShowcase() {
+export function MediaShowcase({ primary = false }) {
   const { t } = useI18n();
   const [openItem, setOpenItem] = useState(null);
 
@@ -24,6 +24,7 @@ export function MediaShowcase() {
     <Section id="work" labelledBy="work-title">
       <SectionHeading
         id="work-title"
+        level={primary ? 1 : 2}
         eyebrow={t('work.eyebrow')}
         title={t('work.title')}
         subtitle={t('work.subtitle')}

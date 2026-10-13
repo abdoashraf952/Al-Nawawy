@@ -26,13 +26,14 @@ const offeringIcons = [
   AppWindow,
 ];
 
-export function WebDevelopment() {
+export function WebDevelopment({ primary = false }) {
   const { t } = useI18n();
 
   return (
     <Section id="web" labelledBy="web-title">
       <SectionHeading
         id="web-title"
+        level={primary ? 1 : 2}
         eyebrow={t('web.eyebrow')}
         title={t('web.title')}
         subtitle={t('web.subtitle')}

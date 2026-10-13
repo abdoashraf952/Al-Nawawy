@@ -7,13 +7,14 @@ import { Reveal } from '../components/ui/Reveal';
 import { Button } from '../components/ui/Button';
 
 /** Native <details> keeps the accordion keyboard- and screen-reader-accessible with no JS state. */
-export function FAQ() {
+export function FAQ({ primary = false }) {
   const { t } = useI18n();
 
   return (
     <Section id="faq" labelledBy="faq-title">
       <SectionHeading
         id="faq-title"
+        level={primary ? 1 : 2}
         eyebrow={t('faq.eyebrow')}
         title={t('faq.title')}
         subtitle={t('faq.subtitle')}

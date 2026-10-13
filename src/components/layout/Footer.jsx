@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Youtube, Twitter, Mail, Phone, MessageCircle, ArrowUp } from 'lucide-react';
 import { siteConfig, telLink, whatsappLink, CONTACT_PHONE } from '../../config/site';
 import { useI18n } from '../../i18n/useI18n';
 import { Container } from '../ui/Container';
 import { LogoMark } from './Logo';
+import { routePath } from '../../data/routes';
 
 const socialIcons = {
   facebook: Facebook,
@@ -16,20 +18,19 @@ export function Footer() {
   const { t } = useI18n();
 
   const serviceLinks = [
-    { href: '#ai-agents', label: t('nav.agents') },
-    { href: '#automation', label: t('nav.automation') },
-    { href: '#web', label: t('services.items.web.title') },
-    { href: '#marketing', label: t('nav.marketing') },
+    { to: routePath('ai-agents'), label: t('nav.agents') },
+    { to: routePath('automation'), label: t('nav.automation') },
+    { to: routePath('web'), label: t('services.items.web.title') },
+    { to: routePath('marketing'), label: t('nav.marketing') },
   ];
 
   const companyLinks = [
-    { href: '#services', label: t('nav.services') },
-    { href: '#solutions', label: t('nav.solutions') },
-    { href: '#work', label: t('nav.work') },
-    { href: '#why', label: t('why.eyebrow') },
-    { href: '#process', label: t('process.eyebrow') },
-    { href: '#engage', label: t('engage.eyebrow') },
-    { href: '#faq', label: t('nav.faq') },
+    { to: routePath('services'), label: t('nav.services') },
+    { to: routePath('use-cases'), label: t('nav.solutions') },
+    { to: routePath('work'), label: t('nav.work') },
+    { to: routePath('how-we-work'), label: t('nav.process') },
+    { to: routePath('faq'), label: t('nav.faq') },
+    { to: '#contact', label: t('nav.contact'), anchor: true },
   ];
 
   // Only render accounts that are actually configured in src/config/site.js
@@ -120,13 +121,14 @@ export function Footer() {
             © <span dir="ltr">{new Date().getFullYear()}</span> {siteConfig.name} — {siteConfig.nameAr}.{' '}
             {t('footer.rights')}
           </p>
-          <a
-            href="#home"
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-body transition hover:text-brand"
           >
             <ArrowUp aria-hidden="true" className="size-4" />
             {t('footer.backToTop')}
-          </a>
+          </button>
         </div>
       </Container>
     </footer>
@@ -139,10 +141,16 @@ function FooterColumn({ title, links }) {
       <h3 className="text-sm font-bold text-ink">{title}</h3>
       <ul className="mt-4 flex flex-col gap-3 text-sm">
         {links.map((link) => (
-          <li key={link.href}>
-            <a href={link.href} className="text-body transition hover:text-brand">
-              {link.label}
-            </a>
+          <li key={link.to}>
+            {link.anchor ? (
+              <a href={link.to} className="text-body transition hover:text-brand">
+                {link.label}
+              </a>
+            ) : (
+              <Link to={link.to} className="text-body transition hover:text-brand">
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

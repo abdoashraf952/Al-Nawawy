@@ -11,9 +11,10 @@ const resolve = (dict, path) => path.split('.').reduce((acc, key) => acc?.[key],
 /**
  * JSON-LD built only from values that are actually configured or written in the dictionaries.
  * Anything left blank in site.js is omitted rather than invented. Re-run on language change so the
- * description, services and FAQ answers match the visible language.
+ * description, services and FAQ answers match the visible language. The FAQPage block is only
+ * emitted on the FAQ page, where those questions are actually visible.
  */
-export function injectStructuredData(lang = 'ar') {
+export function injectStructuredData(lang = 'ar', { includeFaq = false } = {}) {
   const dict = dictionaries[lang] ?? ar;
   const sameAs = Object.values(siteConfig.social).filter(Boolean);
 
@@ -46,7 +47,7 @@ export function injectStructuredData(lang = 'ar') {
     })),
   };
 
-  const data = { '@context': 'https://schema.org', '@graph': [organization, faq] };
+  const data = { '@context': 'https://schema.org', '@graph': includeFaq ? [organization, faq] : [organization] };
 
   let script = document.getElementById(SCRIPT_ID);
   if (!script) {

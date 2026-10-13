@@ -23,22 +23,24 @@ export function SectionHeading({
   align = 'start',
   tone = 'dark',
   id,
+  level = 2,
   className = '',
 }) {
   const alignment =
     align === 'center' ? 'items-center text-center mx-auto max-w-3xl' : 'items-start text-start';
+  const Heading = level === 1 ? 'h1' : 'h2';
   const titleColor = tone === 'light' ? 'text-white' : 'text-ink';
   const subColor = tone === 'light' ? 'text-white/70' : 'text-body';
 
   return (
     <Reveal className={`flex flex-col gap-4 ${alignment} ${className}`}>
       {eyebrow && <Eyebrow tone={eyebrowTone}>{eyebrow}</Eyebrow>}
-      <h2
+      <Heading
         id={id}
         className={`text-3xl leading-[1.15] font-extrabold sm:text-4xl lg:text-[2.7rem] ${titleColor}`}
       >
         {title}
-      </h2>
+      </Heading>
       {subtitle && <p className={`max-w-2xl text-base leading-relaxed sm:text-lg ${subColor}`}>{subtitle}</p>}
     </Reveal>
   );

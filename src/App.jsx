@@ -1,57 +1,36 @@
-import { useI18n } from './i18n/useI18n';
-import { Navbar } from './components/layout/Navbar';
-import { Footer } from './components/layout/Footer';
-import { Hero } from './sections/Hero';
-import { TrustStrip } from './sections/TrustStrip';
-import { Problem } from './sections/Problem';
-import { ServicesOverview } from './sections/ServicesOverview';
-import { AIAgents } from './sections/AIAgents';
-import { Automation } from './sections/Automation';
-import { WebDevelopment } from './sections/WebDevelopment';
-import { Marketing } from './sections/Marketing';
-import { MediaShowcase } from './sections/MediaShowcase';
-import { WhyUs } from './sections/WhyUs';
-import { Process } from './sections/Process';
-import { Solutions } from './sections/Solutions';
-import { Engagement } from './sections/Engagement';
-import { FAQ } from './sections/FAQ';
-import { Contact } from './sections/Contact';
-import { FloatingWhatsApp } from './components/layout/FloatingWhatsApp';
+import { Routes, Route } from 'react-router-dom';
+import { Layout } from './components/layout/Layout';
+import {
+  HomePage,
+  ServicesPage,
+  AIAgentsPage,
+  AutomationPage,
+  WebPage,
+  MarketingPage,
+  UseCasesPage,
+  WorkPage,
+  HowWeWorkPage,
+  FAQPage,
+  NotFoundPage,
+} from './pages/pages';
 
+// Paths here must match src/data/routes.js (which also drives the post-build static pages).
 export default function App() {
-  const { t } = useI18n();
-
   return (
-    <>
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-brand focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"
-      >
-        {t('common.skipToContent')}
-      </a>
-
-      <Navbar />
-
-      <main id="main">
-        <Hero />
-        <TrustStrip />
-        <Problem />
-        <ServicesOverview />
-        <AIAgents />
-        <Automation />
-        <WebDevelopment />
-        <Marketing />
-        <Solutions />
-        <MediaShowcase />
-        <WhyUs />
-        <Process />
-        <Engagement />
-        <FAQ />
-        <Contact />
-      </main>
-
-      <Footer />
-      <FloatingWhatsApp />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="services" element={<ServicesPage />} />
+        <Route path="services/ai-agents" element={<AIAgentsPage />} />
+        <Route path="services/automation" element={<AutomationPage />} />
+        <Route path="services/web" element={<WebPage />} />
+        <Route path="services/marketing" element={<MarketingPage />} />
+        <Route path="use-cases" element={<UseCasesPage />} />
+        <Route path="work" element={<WorkPage />} />
+        <Route path="how-we-work" element={<HowWeWorkPage />} />
+        <Route path="faq" element={<FAQPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }

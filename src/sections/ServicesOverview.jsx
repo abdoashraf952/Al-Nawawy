@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import { useI18n } from '../i18n/useI18n';
 import { services } from '../data/services';
@@ -6,13 +7,14 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
 import { DirArrow } from '../components/ui/Button';
 
-export function ServicesOverview() {
+export function ServicesOverview({ primary = false }) {
   const { t } = useI18n();
 
   return (
     <Section id="services" labelledBy="services-title" className="bg-surface/60">
       <SectionHeading
         id="services-title"
+        level={primary ? 1 : 2}
         eyebrow={t('services.eyebrow')}
         title={t('services.title')}
         subtitle={t('services.subtitle')}
@@ -30,8 +32,8 @@ export function ServicesOverview() {
               delay={i * 0.06}
               className={featured ? 'lg:col-span-2' : ''}
             >
-              <a
-                href={service.href}
+              <Link
+                to={service.path}
                 className={`group flex h-full flex-col rounded-3xl p-7 transition duration-300 hover:-translate-y-1 sm:p-8 ${
                   featured
                     ? 'border-gradient shadow-soft hover:shadow-lift'
@@ -81,7 +83,7 @@ export function ServicesOverview() {
                   {t(`${service.key}.cta`)}
                   <DirArrow className="transition-transform duration-200 group-hover:translate-x-[3px] rtl:group-hover:-translate-x-[3px]" />
                 </span>
-              </a>
+              </Link>
             </Reveal>
           );
         })}

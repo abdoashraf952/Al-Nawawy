@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { MessageCircle } from 'lucide-react';
 import { useI18n } from '../i18n/useI18n';
 import { whatsappLink } from '../config/site';
@@ -60,7 +61,7 @@ export function Hero() {
                 <MessageCircle aria-hidden="true" className="size-[18px]" />
                 {t('hero.ctaPrimary')}
               </Button>
-              <Button href="#services" variant="secondary" size="lg">
+              <Button as={Link} to="/services" variant="secondary" size="lg">
                 {t('hero.ctaSecondary')}
               </Button>
             </motion.div>

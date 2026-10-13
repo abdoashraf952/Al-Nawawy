@@ -15,7 +15,7 @@ const pillars = [
   { id: 'aiCreative', icon: Clapperboard },
 ];
 
-export function Marketing() {
+export function Marketing({ primary = false }) {
   const { t, isRtl } = useI18n();
   const [active, setActive] = useState(0);
   const tabRefs = useRef([]);
@@ -43,6 +43,7 @@ export function Marketing() {
     <Section id="marketing" labelledBy="marketing-title" className="bg-surface/60">
       <SectionHeading
         id="marketing-title"
+        level={primary ? 1 : 2}
         eyebrow={t('marketing.eyebrow')}
         title={t('marketing.title')}
         subtitle={t('marketing.subtitle')}

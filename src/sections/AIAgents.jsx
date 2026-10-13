@@ -18,7 +18,7 @@ import { FlowDiagram } from '../components/visuals/FlowDiagram';
 
 const flowIcons = [MessageSquare, Bot, Brain, Database, Send, ShoppingCart];
 
-export function AIAgents() {
+export function AIAgents({ primary = false }) {
   const { t } = useI18n();
 
   return (
@@ -26,6 +26,7 @@ export function AIAgents() {
       <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
         <SectionHeading
           id="agents-title"
+          level={primary ? 1 : 2}
           eyebrow={t('agents.eyebrow')}
           eyebrowTone="accent"
           title={t('agents.title')}

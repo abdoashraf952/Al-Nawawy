@@ -1,7 +1,6 @@
 import { createContext, useCallback, useEffect, useMemo, useState } from 'react';
 import { ar } from './ar';
 import { en } from './en';
-import { injectStructuredData } from '../seo/structuredData';
 
 const dictionaries = { ar, en };
 const STORAGE_KEY = 'al-nawawy:lang';
@@ -29,14 +28,6 @@ export function I18nProvider({ children }) {
     const root = document.documentElement;
     root.lang = lang;
     root.dir = dir;
-
-    injectStructuredData(lang);
-
-    const dict = dictionaries[lang];
-    document.title = dict.meta.title;
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute('content', dict.meta.description);
 
     try {
       localStorage.setItem(STORAGE_KEY, lang);

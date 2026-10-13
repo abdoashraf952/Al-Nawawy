@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { siteConfig } from '../../config/site';
 
 export function LogoMark({ className = '' }) {
@@ -27,8 +28,8 @@ export function Logo({ tone = 'dark', className = '' }) {
   const subColor = tone === 'light' ? 'text-white/60' : 'text-muted';
 
   return (
-    <a
-      href="#home"
+    <Link
+      to="/"
       className={`group inline-flex items-center gap-2.5 rounded-xl ${className}`}
       aria-label={`${siteConfig.name} — ${siteConfig.tagline}`}
     >
@@ -46,6 +47,6 @@ export function Logo({ tone = 'dark', className = '' }) {
           {siteConfig.tagline}
         </span>
       </span>
-    </a>
+    </Link>
   );
 }

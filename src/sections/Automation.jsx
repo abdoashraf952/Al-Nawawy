@@ -8,13 +8,14 @@ import { FlowDiagram } from '../components/visuals/FlowDiagram';
 
 const flowIcons = [User, Inbox, Workflow, Database, Bell, CalendarClock];
 
-export function Automation() {
+export function Automation({ primary = false }) {
   const { t } = useI18n();
 
   return (
     <Section id="automation" labelledBy="automation-title" className="bg-surface/60">
       <SectionHeading
         id="automation-title"
+        level={primary ? 1 : 2}
         eyebrow={t('automation.eyebrow')}
         title={t('automation.title')}
         subtitle={t('automation.subtitle')}

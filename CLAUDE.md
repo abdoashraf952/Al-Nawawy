@@ -42,6 +42,29 @@ the page.
 
 ## Architecture
 
+### Pages and routing
+
+Multi-page, client-side routed with `react-router-dom` (`BrowserRouter`, `basename` from
+`BASE_URL`). Not Next.js: the site is static on GitHub Pages and needs no server rendering.
+
+- `src/data/routes.js` is the route table (id + path). It is plain data because
+  `scripts/postbuild.mjs` imports it in Node. `App.jsx` declares the matching `<Route>`s —
+  keep the two in sync, and add `pages.<id>.title/description` to **both** dictionaries.
+- `src/pages/pages.jsx` composes each page from `src/sections/*`. The first section of a page
+  gets `primary` so it renders the page's single `<h1>` (`SectionHeading level={1}`).
+- `components/layout/Layout.jsx` wraps every page and renders `<Contact />` after the page
+  outlet, so Contact appears on all pages. Nav's "Contact" is a same-page `#contact` anchor,
+  not a route. It also sets per-page title/description/canonical, scrolls to top and moves
+  focus to `<main>` on navigation.
+- Internal navigation uses `Link`/`NavLink` (`Button as={Link} to=...`). Never use a plain
+  `href="/..."` or a `#section` link to another page.
+- GitHub Pages cannot rewrite URLs. `npm run build` therefore runs `scripts/postbuild.mjs`,
+  which writes `dist/<route>/index.html` for every route (Arabic title/description/canonical
+  baked in), `dist/404.html` and `dist/sitemap.xml`. Asset URLs in `index.html` must be
+  base-absolute (`%BASE_URL%...`), since the same file is served from nested paths.
+- Page changes are an opacity-only fade (`animate-page-in`). Do not add a transform to that
+  wrapper: it would become the containing block for the lightbox's `position: fixed`.
+
 ### Content is data, not JSX
 
 No user-facing string is hardcoded in a component. Three layers:

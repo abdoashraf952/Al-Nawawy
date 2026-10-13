@@ -1,4 +1,5 @@
 import { Bot, Workflow, Code2, Megaphone } from 'lucide-react';
+import { routePath } from './routes';
 
 // Structure + i18n keys only. All copy lives in src/i18n/*.js
 export const services = [
@@ -6,7 +7,7 @@ export const services = [
     id: 'ai-agents',
     key: 'services.items.agents',
     icon: Bot,
-    href: '#ai-agents',
+    path: routePath('ai-agents'),
     featured: true,
     accent: 'accent',
   },
@@ -14,21 +15,21 @@ export const services = [
     id: 'automation',
     key: 'services.items.automation',
     icon: Workflow,
-    href: '#automation',
+    path: routePath('automation'),
     accent: 'brand',
   },
   {
     id: 'web',
     key: 'services.items.web',
     icon: Code2,
-    href: '#web',
+    path: routePath('web'),
     accent: 'brand',
   },
   {
     id: 'marketing',
     key: 'services.items.marketing',
     icon: Megaphone,
-    href: '#marketing',
+    path: routePath('marketing'),
     accent: 'brand',
   },
 ];

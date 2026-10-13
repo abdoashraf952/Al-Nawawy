@@ -23,6 +23,7 @@
   --animate-float: float 7s ease-in-out infinite;
   --animate-pulse-dot: pulse-dot 2.4s ease-in-out infinite;
   --animate-ribbon: ribbon 14s ease-in-out infinite alternate;
+  --animate-page-in: page-in 0.35s ease-out;
 
   @keyframes float {
     0%,
@@ -43,6 +44,15 @@
     50% {
       opacity: 0.45;
       transform: scale(0.82);
+    }
+  }
+
+  @keyframes page-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 
