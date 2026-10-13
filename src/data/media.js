@@ -37,6 +37,33 @@ export const mediaItems = [
     span: 'normal',
     title: { en: 'AI Product Image', ar: 'صورة منتج بالذكاء الاصطناعي' },
   },
+  {
+    id: 'ad-02',
+    type: 'video',
+    src: 'https://res.cloudinary.com/i75rqecg/video/upload/q_auto/v1791881823/gemini_generated.mp4',
+    poster: 'https://res.cloudinary.com/i75rqecg/video/upload/so_0/v1791881823/gemini_generated.jpg',
+    aspect: '16/9',
+    span: 'wide',
+    title: { en: 'AI Video Production', ar: 'إنتاج فيديو بالذكاء الاصطناعي' },
+  },
+  {
+    id: 'ad-03',
+    type: 'video',
+    src: 'https://res.cloudinary.com/i75rqecg/video/upload/q_auto/v1791881794/final.mp4',
+    poster: 'https://res.cloudinary.com/i75rqecg/video/upload/so_0/v1791881794/final.jpg',
+    aspect: '16/9',
+    span: 'normal',
+    title: { en: 'Final Campaign Cut', ar: 'النسخة النهائية للحملة' },
+  },
+  {
+    id: 'ad-04',
+    type: 'video',
+    src: 'https://res.cloudinary.com/i75rqecg/video/upload/q_auto/v1791881793/Advertising_video_script_for_.mp4',
+    poster: 'https://res.cloudinary.com/i75rqecg/video/upload/so_0/v1791881793/Advertising_video_script_for_.jpg',
+    aspect: '16/9',
+    span: 'normal',
+    title: { en: 'Scripted Advertising Video', ar: 'فيديو إعلاني بسيناريو مكتوب' },
+  },
 ];
 
 // Local paths get the GitHub Pages base prefix; full URLs (e.g. Cloudinary) pass through untouched.
