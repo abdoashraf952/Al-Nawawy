@@ -13,6 +13,7 @@ import { useI18n } from '../i18n/useI18n';
 import { Section } from '../components/ui/Section';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
+import { ServiceCTA } from '../components/ui/ServiceCTA';
 
 const offeringIcons = [
   Building2,
@@ -89,6 +90,8 @@ export function WebDevelopment() {
           </ul>
         </div>
       </Reveal>
+
+      <ServiceCTA service="web" />
     </Section>
   );
 }

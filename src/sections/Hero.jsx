@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'motion/react';
+import { MessageCircle } from 'lucide-react';
 import { useI18n } from '../i18n/useI18n';
 import { whatsappLink } from '../config/site';
 import { Container } from '../components/ui/Container';
@@ -56,6 +57,7 @@ export function Hero() {
                 size="lg"
                 withArrow
               >
+                <MessageCircle aria-hidden="true" className="size-[18px]" />
                 {t('hero.ctaPrimary')}
               </Button>
               <Button href="#services" variant="secondary" size="lg">

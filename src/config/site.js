@@ -9,8 +9,8 @@ export const siteConfig = {
   name: 'Al-Nawawy',
   nameAr: 'النواوي',
   tagline: 'AI · Automation · Web · Marketing',
-  // TODO: set once deployed, e.g. https://<your-username>.github.io/Al-Nawawy/
-  url: '',
+  // Public GitHub Pages URL (with trailing slash). Update if a custom domain is added.
+  url: 'https://abdoashraf952.github.io/Al-Nawawy/',
   email: '', // leave empty to hide the email link
   phone: CONTACT_PHONE,
   phoneIntl: CONTACT_PHONE_INTL,

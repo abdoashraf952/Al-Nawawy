@@ -1,27 +1,59 @@
 import { siteConfig, CONTACT_PHONE_INTL } from '../config/site';
+import { services } from '../data/services';
+import { ar } from '../i18n/ar';
+import { en } from '../i18n/en';
+
+const dictionaries = { ar, en };
+const SCRIPT_ID = 'ld-json-site';
+
+const resolve = (dict, path) => path.split('.').reduce((acc, key) => acc?.[key], dict);
 
 /**
- * Organization JSON-LD built only from values that are actually configured.
- * Anything left blank in site.js is omitted rather than invented.
+ * JSON-LD built only from values that are actually configured or written in the dictionaries.
+ * Anything left blank in site.js is omitted rather than invented. Re-run on language change so the
+ * description, services and FAQ answers match the visible language.
  */
-export function injectStructuredData() {
+export function injectStructuredData(lang = 'ar') {
+  const dict = dictionaries[lang] ?? ar;
   const sameAs = Object.values(siteConfig.social).filter(Boolean);
 
-  const data = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
+  const organization = {
+    '@type': 'ProfessionalService',
+    '@id': siteConfig.url ? `${siteConfig.url}#organization` : undefined,
     name: siteConfig.name,
     alternateName: siteConfig.nameAr,
-    description:
-      'Al-Nawawy builds AI agents, business automation systems, professional websites, and complete marketing solutions for businesses.',
+    description: dict.meta.description,
     telephone: CONTACT_PHONE_INTL,
     ...(siteConfig.url && { url: siteConfig.url }),
     ...(siteConfig.email && { email: siteConfig.email }),
     ...(sameAs.length > 0 && { sameAs }),
+    makesOffer: services.map((service) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: resolve(dict, `${service.key}.title`),
+        description: resolve(dict, `${service.key}.desc`),
+      },
+    })),
   };
 
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
+  const faq = {
+    '@type': 'FAQPage',
+    mainEntity: dict.faq.items.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  };
+
+  const data = { '@context': 'https://schema.org', '@graph': [organization, faq] };
+
+  let script = document.getElementById(SCRIPT_ID);
+  if (!script) {
+    script = document.createElement('script');
+    script.id = SCRIPT_ID;
+    script.type = 'application/ld+json';
+    document.head.appendChild(script);
+  }
   script.textContent = JSON.stringify(data);
-  document.head.appendChild(script);
 }

@@ -24,9 +24,12 @@ export function Footer() {
 
   const companyLinks = [
     { href: '#services', label: t('nav.services') },
+    { href: '#solutions', label: t('nav.solutions') },
     { href: '#work', label: t('nav.work') },
     { href: '#why', label: t('why.eyebrow') },
     { href: '#process', label: t('process.eyebrow') },
+    { href: '#engage', label: t('engage.eyebrow') },
+    { href: '#faq', label: t('nav.faq') },
   ];
 
   // Only render accounts that are actually configured in src/config/site.js

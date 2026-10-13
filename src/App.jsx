@@ -12,7 +12,11 @@ import { Marketing } from './sections/Marketing';
 import { MediaShowcase } from './sections/MediaShowcase';
 import { WhyUs } from './sections/WhyUs';
 import { Process } from './sections/Process';
-import { FinalCTA } from './sections/FinalCTA';
+import { Solutions } from './sections/Solutions';
+import { Engagement } from './sections/Engagement';
+import { FAQ } from './sections/FAQ';
+import { Contact } from './sections/Contact';
+import { FloatingWhatsApp } from './components/layout/FloatingWhatsApp';
 
 export default function App() {
   const { t } = useI18n();
@@ -37,13 +41,17 @@ export default function App() {
         <Automation />
         <WebDevelopment />
         <Marketing />
+        <Solutions />
         <MediaShowcase />
         <WhyUs />
         <Process />
-        <FinalCTA />
+        <Engagement />
+        <FAQ />
+        <Contact />
       </main>
 
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 }

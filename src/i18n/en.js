@@ -24,9 +24,12 @@ export const en = {
     automation: 'Automation',
     web: 'Web',
     marketing: 'Marketing',
+    solutions: 'Use cases',
     work: 'Work',
+    process: 'How we work',
+    faq: 'FAQ',
     contact: 'Contact',
-    cta: "Let's Talk",
+    cta: 'Chat on WhatsApp',
   },
 
   hero: {
@@ -36,7 +39,7 @@ export const en = {
     titleTail: '.',
     subtitle:
       'AI Agents, Business Automation, Professional Websites, and Complete Marketing Solutions — built around your business.',
-    ctaPrimary: "Let's Talk",
+    ctaPrimary: 'Chat on WhatsApp',
     ctaSecondary: 'Explore Services',
     note: 'AI, automation, websites and marketing under one roof — built around what your business actually needs.',
     whatsappMessage: "Hi Al-Nawawy, I'd like to talk about a project.",
@@ -329,6 +332,196 @@ export const en = {
       { title: 'Build', desc: 'We develop the solution and keep you in the loop while we do.' },
       { title: 'Launch & Improve', desc: 'We deploy, measure what happens, and improve from the numbers.' },
     ],
+  },
+
+  serviceCta: {
+    agents: {
+      label: 'Discuss an AI agent',
+      message: "Hi Al-Nawawy, I'm interested in an AI agent for my business. Can we talk?",
+    },
+    automation: {
+      label: 'Discuss automation',
+      message: "Hi Al-Nawawy, I'd like to automate a process in my business. Can we talk?",
+    },
+    web: {
+      label: 'Discuss a website',
+      message: "Hi Al-Nawawy, I'm interested in a website or web application. Can we talk?",
+    },
+    marketing: {
+      label: 'Discuss marketing',
+      message: "Hi Al-Nawawy, I'd like to talk about marketing for my business.",
+    },
+    work: {
+      label: 'Ask about creative work',
+      message: "Hi Al-Nawawy, I saw your creative work and I'd like to discuss something similar.",
+    },
+    prompt: 'Ready to talk about this service?',
+  },
+
+  solutions: {
+    eyebrow: 'Use cases',
+    title: 'See how it fits a business like yours',
+    subtitle:
+      'Example scenarios showing how the services combine. These illustrate what is possible — they are not client case studies.',
+    problemLabel: 'The situation',
+    solutionLabel: 'What we would build',
+    items: [
+      {
+        title: 'Online stores',
+        problem: 'Orders arrive as chat messages and are copied into sheets by hand, often late.',
+        solution:
+          'An AI agent answers product questions and takes the order on WhatsApp. Automation records it and notifies the team. Campaigns bring in new customers.',
+        services: ['agents', 'automation', 'marketing'],
+        cta: 'Discuss this scenario',
+        message: "Hi Al-Nawawy, I run an online store and want to automate orders and customer replies. Can we talk?",
+      },
+      {
+        title: 'Clinics and appointment-based services',
+        problem: 'Booking questions fill the phone and inbox, and no-shows are not followed up.',
+        solution:
+          'An AI agent handles booking requests around the clock. Automation sends confirmations and reminders. A clear website presents the services.',
+        services: ['agents', 'automation', 'web'],
+        cta: 'Discuss this scenario',
+        message: "Hi Al-Nawawy, I run an appointment-based business and want to automate bookings and reminders. Can we talk?",
+      },
+      {
+        title: 'Restaurants and food businesses',
+        problem: 'The same menu and delivery questions are answered all day, and orders are written down by hand.',
+        solution:
+          'An AI agent answers menu questions and takes orders. Automation passes them to the right place. Product visuals and promo content support the menu.',
+        services: ['agents', 'automation', 'marketing'],
+        cta: 'Discuss this scenario',
+        message: "Hi Al-Nawawy, I run a restaurant and want to automate orders and promote the menu. Can we talk?",
+      },
+      {
+        title: 'Real estate and lead-driven sales',
+        problem: 'Enquiries from ads and pages are answered slowly, so serious buyers go elsewhere.',
+        solution:
+          'An AI agent replies instantly and collects the buyer details. Automation routes each lead to a CRM and the right person. A landing page and ads feed it.',
+        services: ['agents', 'automation', 'web', 'marketing'],
+        cta: 'Discuss this scenario',
+        message: "Hi Al-Nawawy, I work in sales and want to respond to leads faster and track them properly. Can we talk?",
+      },
+      {
+        title: 'Service companies and agencies',
+        problem: 'The website is out of date, reports are assembled manually and content is slow to produce.',
+        solution:
+          'A professional website, automated reporting and internal workflows, and a repeatable content process.',
+        services: ['web', 'automation', 'marketing'],
+        cta: 'Discuss this scenario',
+        message: "Hi Al-Nawawy, I run a service company and want a better website and less manual reporting. Can we talk?",
+      },
+    ],
+  },
+
+  engage: {
+    eyebrow: 'Ways to work together',
+    title: 'Buy one service, or combine them',
+    subtitle:
+      'There are no fixed packages. Every project is scoped around what you need, and quoted after we talk.',
+    recommended: 'Most flexible',
+    paths: [
+      {
+        title: 'One service',
+        desc: 'Pick the service that solves your problem — an AI agent, an automation, a website or a marketing engagement. Each one stands on its own.',
+        points: ['Focused on a single goal', 'The simplest way to start', 'Add another service later if it makes sense'],
+        cta: 'Start with one service',
+        message: "Hi Al-Nawawy, I'd like to start with one service. Can we talk about what fits?",
+      },
+      {
+        title: 'Combined solution',
+        desc: 'Services designed to work together — for example an AI agent that feeds an automated workflow, with a website and campaigns sending customers to both.',
+        points: ['One team and one plan', 'Parts built to connect', 'Prioritised by business impact'],
+        cta: 'Plan a combined solution',
+        message: "Hi Al-Nawawy, I'd like a combined solution (for example AI, automation and a website). Can we talk?",
+      },
+      {
+        title: 'Custom quote',
+        desc: 'Tell us what you need and we reply with a scope and a quote. Prices depend on the work, so we do not publish a fixed price list.',
+        points: ['Quote based on your scope', 'Discussed on WhatsApp first', 'Not a one-size-fits-all package'],
+        cta: 'Request a quote',
+        message: "Hi Al-Nawawy, I'd like a quote for a project. Can we talk about the scope?",
+      },
+    ],
+  },
+
+  faq: {
+    eyebrow: 'FAQ',
+    title: 'Questions people ask before they start',
+    subtitle: "Can't find your question? Send it on WhatsApp.",
+    askCta: 'Ask on WhatsApp',
+    askMessage: 'Hi Al-Nawawy, I have a question before starting a project.',
+    items: [
+      {
+        q: 'What does Al-Nawawy do?',
+        a: 'We offer four independent services: AI agents for customer communication, business automation with n8n and similar tools, website and web application development, and marketing including AI-generated creative content.',
+      },
+      {
+        q: 'Do I have to buy all four services?',
+        a: 'No. They are separate services. Many businesses only need one — for example a website, with no AI at all. If more than one makes sense, we design them to work together.',
+      },
+      {
+        q: 'How much does it cost?',
+        a: 'It depends on the scope, so we do not publish fixed prices. Tell us what you need on WhatsApp and we will reply with a scope and a quote.',
+      },
+      {
+        q: 'What is the difference between a chatbot and an AI agent?',
+        a: 'A chatbot follows a fixed script. An AI agent understands requests in natural language, answers from your own business information and performs actions such as recording an order or booking an appointment.',
+      },
+      {
+        q: 'Which channels can an AI agent work on?',
+        a: 'WhatsApp, Messenger, Facebook Pages and website chat, among others. We confirm what is possible for your setup during the first conversation.',
+      },
+      {
+        q: 'What is n8n, and why do you use it?',
+        a: 'n8n is a workflow automation tool that connects the apps a business already uses so information moves between them automatically. We use it, along with similar technologies, to build automations around your processes.',
+      },
+      {
+        q: 'Can you build a website without any AI?',
+        a: 'Yes. Web development is a full service on its own. AI is only added if it genuinely helps, and we will tell you if it would not.',
+      },
+      {
+        q: 'Can the solution work in Arabic and English?',
+        a: 'Solutions can be designed for Arabic, English or both, depending on your audience.',
+      },
+      {
+        q: 'How long does a project take?',
+        a: 'It depends on what is being built. We give a time estimate together with the quote, after we understand the scope.',
+      },
+      {
+        q: 'How do we get started?',
+        a: 'Message us on WhatsApp, or use the contact form on this page, which prepares the message for you. We ask a few questions about your business, then propose an approach.',
+      },
+    ],
+  },
+
+  contact: {
+    eyebrow: 'Contact',
+    title: 'Tell us what you need',
+    subtitle: 'Choose the services you are interested in, add a few words, and send it to us on WhatsApp.',
+    channelsTitle: 'Prefer to reach out directly?',
+    form: {
+      servicesLabel: 'I am interested in',
+      nameLabel: 'Your name',
+      namePlaceholder: 'Name',
+      detailsLabel: 'About your business or project',
+      detailsPlaceholder: 'e.g. We take orders on WhatsApp and it is hard to keep up',
+      submit: 'Send on WhatsApp',
+      note: 'This opens WhatsApp with your message ready to send. Nothing is stored on this website.',
+      options: {
+        agents: 'AI Agents',
+        automation: 'Automation',
+        web: 'Website / Software',
+        marketing: 'Marketing',
+        unsure: 'Not sure yet',
+      },
+      message: {
+        intro: "Hi Al-Nawawy, I'd like to discuss a project.",
+        name: 'Name',
+        services: 'Interested in',
+        details: 'About my business',
+      },
+    },
   },
 
   cta: {

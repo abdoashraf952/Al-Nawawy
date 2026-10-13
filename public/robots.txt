@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdoashraf952.github.io/Al-Nawawy/sitemap.xml

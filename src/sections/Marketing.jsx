@@ -4,6 +4,7 @@ import { useI18n } from '../i18n/useI18n';
 import { Section } from '../components/ui/Section';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
+import { ServiceCTA } from '../components/ui/ServiceCTA';
 
 // AI Creative is styled identically to the other three on purpose: it is a tool
 // inside the service, not the service itself.
@@ -139,6 +140,8 @@ export function Marketing() {
           <p className="text-base leading-relaxed text-body">{t('marketing.closing')}</p>
         </div>
       </Reveal>
+
+      <ServiceCTA service="marketing" />
     </Section>
   );
 }

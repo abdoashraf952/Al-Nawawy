@@ -3,6 +3,7 @@ import { useI18n } from '../i18n/useI18n';
 import { Section } from '../components/ui/Section';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
+import { ServiceCTA } from '../components/ui/ServiceCTA';
 import { FlowDiagram } from '../components/visuals/FlowDiagram';
 
 const flowIcons = [User, Inbox, Workflow, Database, Bell, CalendarClock];
@@ -55,6 +56,8 @@ export function Automation() {
         <h3 className="text-lg font-bold text-ink">{t('automation.flowTitle')}</h3>
         <FlowDiagram steps={t('automation.flow')} icons={flowIcons} className="mt-8" />
       </Reveal>
+
+      <ServiceCTA service="automation" />
     </Section>
   );
 }

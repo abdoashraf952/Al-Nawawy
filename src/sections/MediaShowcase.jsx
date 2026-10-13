@@ -4,6 +4,7 @@ import { mediaItems } from '../data/media';
 import { Section } from '../components/ui/Section';
 import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
+import { ServiceCTA } from '../components/ui/ServiceCTA';
 import { MediaCard } from '../components/media/MediaCard';
 import { Lightbox } from '../components/media/Lightbox';
 
@@ -40,6 +41,8 @@ export function MediaShowcase() {
           </Reveal>
         ))}
       </div>
+
+      <ServiceCTA service="work" />
 
       <Lightbox item={openItem} onClose={() => setOpenItem(null)} />
     </Section>
